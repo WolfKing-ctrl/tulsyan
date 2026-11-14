@@ -1,0 +1,7 @@
+import ContactForm from '@/components/ContactForm'; import { Reveal } from '@/components/fx'; import { INFO } from '@/lib/constants';
+export const metadata = { title: 'Contact — Tulsyan Healthcare' };
+export default function Contact({ searchParams }) {
+  return (<section className="wrap page"><Reveal><span className="eyebrow">Wholesale enquiries</span><h1>Let’s talk<br />supply.</h1><p className="contact-intro">Tell us what your business needs. Share product names, approximate quantities and your delivery location, and our team will follow up with availability and a B2B quote.</p></Reveal>
+    <div className="eq contact-layout"><Reveal><div className="contact-form-panel"><h2>Request a quote</h2><p>For faster assistance, include the product and quantity you need.</p><ContactForm item={searchParams?.item} /></div></Reveal>
+      <Reveal delay={.15}><div className="info contact-info"><h2>Reach our team</h2><p>We support hospitals, clinics, pharmacies, retailers and distributors with wholesale supply enquiries.</p><p><b>Call us</b><a href={`tel:${INFO.phone}`}>{INFO.phone}</a> · <a href={`tel:${INFO.phone2}`}>{INFO.phone2}</a></p><p><b>Email</b><a href={`mailto:${INFO.email}`}>{INFO.email}</a></p><p><b>Website</b><a href={`https://${INFO.web}`} target="_blank" rel="noreferrer">{INFO.web}</a></p><p><b>Visit us</b>{INFO.addr}</p><div className="contact-promise"><b>What happens next?</b><span>We’ll review your list, confirm availability and get back to you about quantities, pricing and delivery.</span></div></div></Reveal></div></section>);
+}
