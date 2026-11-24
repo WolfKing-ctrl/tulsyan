@@ -1,5 +1,5 @@
 import db, { plain } from '@/lib/db'; import Product from '@/models/Product';
-import Hero from '@/components/Hero'; import { Marquee, Featured, Why, Deals } from '@/components/Sections';
+import Hero from '@/components/Hero'; import { Marquee, Categories, Featured, Why, Process, Deals, CTA } from '@/components/Sections';
 import { CATALOG } from '@/lib/catalog';
 export const dynamic = 'force-dynamic';
 export default async function Home() {
@@ -13,5 +13,5 @@ export default async function Home() {
   const items = [...CATALOG.filter((product) => product.featured), ...additionalItems]
     .filter((product, index, list) => list.findIndex((other) => `${other.brand} ${other.name}`.toLowerCase() === `${product.brand} ${product.name}`.toLowerCase()) === index)
     .slice(0, 8);
-  return <><Hero /><Marquee /><Featured items={items} /><Why catalogCount={CATALOG.length} /><Deals /></>;
+  return <><Hero /><Marquee /><Categories /><Featured items={items} /><Why catalogCount={CATALOG.length} /><Process /><Deals /><CTA /></>;
 }
