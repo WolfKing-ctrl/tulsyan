@@ -351,7 +351,11 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1240px;margin:0 auto;paddin
 .btn.ghost-w:hover{background:#fff;color:var(--blue);border-color:#fff}
 .btn.white{background:#fff;color:var(--blue);border-color:#fff}
 .btn.white:hover{box-shadow:0 14px 30px -8px rgba(0,0,0,.4);color:var(--blue)}
-.cursor{position:fixed;top:-9px;left:-9px;width:18px;height:18px;border-radius:50%;border:2px solid var(--blue2);background:rgba(47,155,255,.15);pointer-events:none;z-index:999}
+/* thermometer cursor (desktop / fine pointers only) */
+.cursor{position:fixed;left:0;top:0;width:0;height:0;pointer-events:none;z-index:999}
+.therm{position:absolute;left:0;top:-13px;width:90px;height:26px;transform-origin:2px 13px;filter:drop-shadow(0 5px 6px rgba(10,26,58,.28))}
+.therm svg{display:block}
+@media(pointer:fine){html.tcur,html.tcur *{cursor:none!important}html.tcur input,html.tcur textarea,html.tcur select{cursor:text!important}}
 @media(pointer:coarse){.cursor{display:none}}
 .bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--grad);transform-origin:left;z-index:998}
 
